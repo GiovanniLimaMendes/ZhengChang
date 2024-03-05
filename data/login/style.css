@@ -1,0 +1,72 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: #1c947ca9;
+}
+
+.login{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 75px;
+    padding: 150px;
+    border: 1px black solid;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px black;
+    background-color: rgba(255, 255, 255, 0.596);
+}
+
+#usuario{
+    display: flex;
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: 0px 2px 5px black;
+    font-size: medium;
+}
+
+#senha{
+    display: flex;
+    margin: auto;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: 0px 2px 5px black;
+    font-size: large;
+}
+
+.botao{
+    margin-top: 35px;
+    background-color: #1c947c;
+    color: white;
+    font-size: large;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: 0px 2px 5px black;
+}
+
+.botao:hover{
+    background-color: #2c8080;
+    cursor: pointer;
+}
+
+img{
+    width: 300px;
+    margin-top: -100px;
+}
+
+#erro{
+    display: flex;
+    color: red;
+    position: absolute;
+    margin-top: 650px;
+    margin-left: 790px;
+}
