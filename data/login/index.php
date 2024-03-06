@@ -1,5 +1,9 @@
 <?php
+
+// Chamando a conexão com o banco de dados
 include('conexao.php');
+
+// Verifica se os campos de usuário e senha foram preenchidos
 
 if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
@@ -11,10 +15,14 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
         $usuario = $mysqli->real_escape_string($_POST['usuario']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
 
+        // Pega os dados do banco de dados para validar o login
+
         $sql_code = "SELECT * FROM login WHERE usuario = '$usuario' AND senha = '$senha'";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli-> error);
 
         $quantidade = $sql_query->num_rows;
+
+        // Inicia a sessão do usuáriro e redireciona para a página principal
 
         if($quantidade == 1){
             $usuario = $sql_query->fetch_assoc();

@@ -1,5 +1,7 @@
 <?php
 
+// Chama os arquivos necessários para funcionamento
+
 include('../protect.php');
 include('../conexao.php');
 include('reservas.php');
@@ -50,7 +52,7 @@ include('reservas.php');
         </div>
         <div id="logout">
             <button class="side-btn"id="logout_btn">
-                <a id="logout_btn" href="../../logout.php">
+                <a id="logout_btn" href="../logout.php">
                     <img src="../../img/right-from-bracket-solid.svg">
                         <span class="item-description">
                             Logout
@@ -67,34 +69,36 @@ include('reservas.php');
             </div>
         </header>
         <main class="principal">
-            <div class="main">
-                <form method="post">
-                    <p>E-mail:</p>
-                    <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email"><br>
-                    <p>Responsável pela Reserva:</p>
-                    <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel">
-                    <p>Motivo da Reserva:</p>
-                    <input type="text" class="formulario" id="motivo" placeholder="Exemplo: Reunião com cliente" name="motivo">
-                    <p>Data da Reserva:</p>
-                    <input type="date" class="data" id="data" name="data">
+            <div class="container">
+                <div class="main">
+                    <form method="post">
+                        <p>E-mail:</p>
+                        <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email"><br>
+                        <p>Responsável pela Reserva:</p>
+                        <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel">
+                        <p>Motivo da Reserva:</p>
+                        <input type="text" class="formulario" id="motivo" placeholder="Exemplo: Reunião com cliente" name="motivo">
+                        <p>Data da Reserva:</p>
+                        <input type="date" class="data" id="data" name="data">
                 </div>
-                <div class="main2">
-                    <p>Horário de Inicio:</p>
-                    <input type="time" class="formulario" id="inicio" name="inicio">
-                    <p>Horário Final:</p>
-                    <input type="time" class="formulario" id="fim" name="final">
-                    <p>Sala que irá Utilizar:</p>
-                    <select class="sala" id="sala" name="sala">
-                        <option></option>
-                        <option>Sala de reuniao comercial</option>
-                        <option>Sala de reuniao administrativo</option>
-                        <option>Sala de treinamento</option>
-                    </select>
-                    <p>Observação:</p>
-                    <input type="text" class="formulario" id="observacao" name="observacao">
+                <div class="main3">
+                        <p>Horário de Inicio:</p>
+                        <input type="time" class="formulario" id="inicio" name="inicio">
+                        <p>Horário Final:</p>
+                        <input type="time" class="formulario" id="fim" name="final">
+                        <p>Sala que irá Utilizar:</p>
+                        <select class="sala" id="sala" name="sala">
+                            <option></option>
+                            <option>Sala de reuniao comercial</option>
+                            <option>Sala de reuniao administrativo</option>
+                            <option>Sala de treinamento</option>
+                        </select>
+                        <p>Observação:</p>
+                        <input type="text" class="formulario" id="observacao" name="observacao">
                 </div>
-                <input type="submit" class="formulario" id="botao" name="enviar" onclick="reserva()">
-                </form>
+            </div>
+            <input type="submit" class="formulario" id="botao" name="enviar" onclick="reserva()">
+            </form>
         </main>
         <hr>
         <footer id="rodape">
@@ -111,7 +115,7 @@ include('reservas.php');
             </div>
             <div id="rodapeRedesSociais">
                 <h2 class="info">Redes Sociais</h2>
-                <a href="https://www.facebook.com/zhengchangbrasil" class="linkRedesSociais"><img src="../../img/1024px-Facebook_icon_(black).svg.png" id="facebook"></a>
+                <a href="https://www.facebook.com/zhengchangbrasil" class="linkRedesSociais"><img src="../../img/1024px-Facebook_icon_(black).svg.png" id="facebook" class="redesSociais"></a>
                 <a href="https://www.instagram.com/zhengchangbrasil/" class="linkRedesSociais"><img src="../../img/instagram-circular-black-icon-vector-29783030-removebg-preview_updated.png" id="instagram" class="redesSociais"></a>
                 <a href="https://www.linkedin.com/company/zhengchangbrasil/mycompany/" class="linkRedesSociais"><img src="../../img/linkedin_black_logo_icon_147114.png" id="linkedin" class="redesSociais"></a>
             </div>

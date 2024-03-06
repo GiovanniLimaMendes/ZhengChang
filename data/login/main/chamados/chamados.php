@@ -20,7 +20,7 @@ if (isset($_POST['enviar'])){
     $titulo    = $_POST['titulo'];
     $descricao = $_POST['descricao'];
 
-    $sql = "INSERT INTO chamados (setor, email, titulo, descricao) VALUES ('$setor', '$email', '$titulo', '$descricao')";
+    $sql = "INSERT INTO chamados (setor, email, titulo, descricao, situacao) VALUES ('$setor', '$email', '$titulo', '$descricao' , 'Aguardando')";
 
     if ($mysqli->query($sql) === TRUE){
         echo "<script>alert('Chamado aberto com sucesso, entraremos em contato com você.')</script>";

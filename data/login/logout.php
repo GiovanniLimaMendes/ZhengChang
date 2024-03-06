@@ -1,5 +1,5 @@
 <?php
-
+// Função de logout
 if(!isset($_SESSION)){
     session_start();
 }

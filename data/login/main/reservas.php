@@ -1,5 +1,7 @@
 <?php
 
+// Declaração de namespace do pacote PHPMailer
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -8,16 +10,20 @@ require 'src/Exception.php';
 require 'src/PHPMailer.php';
 require 'src/SMTP.php';
 
-
+// Chama a conexão com o banco de dados
 
 include('../conexao.php');
+
 // Verifique a conexão
+
 if ($mysqli->connect_error) {
     die("Falha na conexão: " . $mysqli->connect_error);
 }
 
 // Verifica se o formulário foi enviado
+
 if(isset($_POST['enviar'])){
+
     // Pega os valores do formulário
     $email =       $_POST['email'];
     $responsavel = $_POST['responsavel'];
@@ -28,18 +34,20 @@ if(isset($_POST['enviar'])){
     $sala =        $_POST['sala'];
     $observacao =  $_POST['observacao'];
 
-    error_log("Erro");
-
     // Query SQL para verificar se já existe uma reserva com a mesma data e sala
+
     $sql_verificar = "SELECT * FROM reservas WHERE data = '$data' AND sala = '$sala'";
     $result_verificar = $mysqli->query($sql_verificar);
 
     // Verifica se já existe uma reserva com a mesma data e sala
+
     if ($result_verificar->num_rows > 0) {
         echo "<script>alert('Sala já reservada nessa data.');</script>";
 
     } else {
+
         // Query SQL para inserir os dados na tabela
+
         $sql = "INSERT INTO reservas (email, responsavel, motivo, data, inicio, final, sala, observacao) VALUES ('$email', '$responsavel', '$motivo', '$data', '$inicio', '$final', '$sala', '$observacao')";
 
         
@@ -49,7 +57,9 @@ if(isset($_POST['enviar'])){
             $mail = new PHPMailer(true);
 
             try {
-                //Server settings
+
+                // Configuração do servidor para envio de e-mail
+
                 $mail->SMTPDebug = 0;                      
                 $mail->isSMTP();                                           
                 $mail->Host       = 'smtp.exchangecorp.com.br';
@@ -58,7 +68,7 @@ if(isset($_POST['enviar'])){
                 $mail->Password   = 'GMC@libras2024';
                 $mail->Port       = 587;
     
-                //Recipients
+                // Configuração dos destinatarios do e-mail
                 $mail->setFrom('giovanni.mendes@calibras.com.br');
                 $mail->addAddress($email);
                 $mail->addReplyTo('giovanni.mendes@calibras.com.br');

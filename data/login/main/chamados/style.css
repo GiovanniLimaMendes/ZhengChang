@@ -260,7 +260,85 @@ textarea{
     resize: none;
 }
 
-p{
-    display: flex;
-    justify-content: center;
+/* Estilos para tela média (1366x768) */
+@media screen and (max-width: 1366px) {
+    hr{
+        width: 82.8rem;
+    }
+
+    #logoRodape{
+        margin-left: 100px;
+        margin-right: 50px;
+    }
+
+    #rodapeFaleConosco{
+        display: block;
+        width: 408px;
+    }
+
+    .info{
+        margin-left: 50px;
+        font-size: 15px;
+    }
+
+    .redesSociais{
+        width: 30px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    #facebook{
+        margin-left: 50px;
+        width: 30px;
+    }
+
+    .principal{
+        height: 50vh;
+    }
+
+    .container{
+        margin-top: 0;
+    }
+
+}
+
+/* Estilos para tela média (1280x720) */
+@media screen and (max-width: 1280px) {
+    hr{
+        width: 77.5rem;
+    }
+
+    #logoRodape{
+        margin-left: 100px;
+        margin-right: 0;
+    }
+
+    #rodapeFaleConosco{
+        display: block;
+        width: 408px;
+    }
+
+    .info{
+        margin-left: 50px;
+        font-size: 15px;
+    }
+
+    .redesSociais{
+        width: 30px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    #facebook{
+        margin-left: 50px;
+        width: 30px;
+    }
+
+    .principal{
+        height: 50vh;
+    }
+
+    .container{
+        margin-top: 0;
+    }
 }

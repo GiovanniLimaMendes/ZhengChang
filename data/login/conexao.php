@@ -1,7 +1,9 @@
 <?php
 
+// Faz a conexão com o banco de dados
+
 $usuario = 'root';
-$senha = '';
+$senha = 'Zheng@2023';
 $database = 'zhengchang';
 $host = 'localhost';
 

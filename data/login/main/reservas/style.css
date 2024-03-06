@@ -212,7 +212,8 @@ th, td {
     background-color: #ffffff;
 }
 th {
-    background-color: #f2f2f2;
+    background-color: #1c947c;
+    color: white;
 }
 tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -229,4 +230,82 @@ tr:hover {
 a{
     text-decoration: none;
     color: black;
+}
+
+/* Estilos para tela média (1366x768) */
+@media screen and (max-width: 1366px) {
+    hr{
+        width: 82.8rem;
+    }
+
+    #logoRodape{
+        margin-left: 100px;
+        margin-right: 50px;
+    }
+
+    .info{
+        margin-left: 50px;
+        font-size: 15px;
+    }
+
+    .redesSociais{
+        width: 30px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    #facebook{
+        margin-left: 50px;
+        width: 30px;
+    }
+
+    .principal{
+        height: 50vh;
+    }
+
+    .container{
+        margin-top: 0;
+    }
+
+}
+
+/* Estilos para tela média (1280x720) */
+@media screen and (max-width: 1280px) {
+    hr{
+        width: 77.5rem;
+    }
+
+    #logoRodape{
+        margin-left: 100px;
+        margin-right: 0;
+    }
+
+    #rodapeFaleConosco{
+        display: block;
+        width: 408px;
+    }
+
+    .info{
+        margin-left: 50px;
+        font-size: 15px;
+    }
+
+    .redesSociais{
+        width: 30px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+    #facebook{
+        margin-left: 50px;
+        width: 30px;
+    }
+
+    .principal{
+        height: 50vh;
+    }
+
+    .container{
+        margin-top: 0;
+    }
 }
