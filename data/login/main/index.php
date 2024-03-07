@@ -21,11 +21,35 @@ include('reservas.php');
     <nav id="sidebar">
         <div id="sidebar_content">
             <ul id="side_items">
+                <li class="side-item-user">
+                    <a>
+                        <img src="../../img/circle-user-solid.svg" width="30px">
+                        <span class="item-description">
+                            <?php
+
+                            if (isset($_SESSION['usuario'])) {
+                                echo $_SESSION['usuario'] . "<br>";
+                                echo " ID: " . $_SESSION['usuario_id'];
+                            } else {
+                                echo "Usuário não está logado";
+                            }
+                            ?>
+                        </span>
+                    </a>
+                </li>
                 <li class="side-item">
                     <a onclick="menu()">
                         <img src="../../img/house-solid.svg" width="30px">
                         <span class="item-description">
                             Menu
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="">
+                        <img src="../../img/car-solid.svg" width="25px">
+                        <span class="item-description">
+                            Reservar Carro
                         </span>
                     </a>
                 </li>
@@ -42,6 +66,14 @@ include('reservas.php');
                         <img src="../../img/phone-solid.svg" width="25px">
                         <span class="item-description">
                             Abrir Chamado
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="meusChamados()">
+                        <img src="../../img/ticket-solid.svg" width="25px">
+                        <span class="item-description">
+                            Meus Chamados
                         </span>
                     </a>
                 </li>

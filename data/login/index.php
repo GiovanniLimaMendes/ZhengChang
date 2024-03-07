@@ -33,6 +33,7 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
 
             $_SESSION['usuario'] = $usuario['usuario'];
             $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['usuario_id'] = $usuario['usuario_id'];
 
             header("Location: main/index.php");
         }else{

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -15,12 +17,13 @@ if ($mysqli->connect_error){
 }
 
 if (isset($_POST['enviar'])){
-    $setor     = $_POST['setor'];
-    $email     = $_POST['email'];
-    $titulo    = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
+    $setor      = $_POST['setor'];
+    $email      = $_POST['email'];
+    $titulo     = $_POST['titulo'];
+    $descricao  = $_POST['descricao'];
+    $usuario_id = $_SESSION['usuario_id'];
 
-    $sql = "INSERT INTO chamados (setor, email, titulo, descricao, situacao) VALUES ('$setor', '$email', '$titulo', '$descricao' , 'Aguardando')";
+    $sql = "INSERT INTO chamados (setor, email, titulo, descricao, situacao, usuario_id) VALUES ('$setor', '$email', '$titulo', '$descricao' , 'Aguardando', '$usuario_id')";
 
     if ($mysqli->query($sql) === TRUE){
         echo "<script>alert('Chamado aberto com sucesso, entraremos em contato com você.')</script>";
