@@ -135,9 +135,11 @@ $result = $mysqli->query($sql);
             </div>
             <div id="rodapeRedesSociais">
                 <h2 class="info">Redes Sociais</h2>
-                <a href="https://www.facebook.com/zhengchangbrasil" class="linkRedesSociais"><img src="../../../../img/1024px-Facebook_icon_(black).svg.png" id="facebook" width="35px"></a>
-                <a href="https://www.instagram.com/zhengchangbrasil/" class="linkRedesSociais"><img src="../../../../img/instagram-circular-black-icon-vector-29783030-removebg-preview_updated.png" id="instagram" class="redesSociais" width="35px"></a>
-                <a href="https://www.linkedin.com/company/zhengchangbrasil/mycompany/" class="linkRedesSociais"><img src="../../../../img/linkedin_black_logo_icon_147114.png" id="linkedin" class="redesSociais" width="35px"></a>
+                <div id="redesSociaisLink">
+                    <a href="https://www.facebook.com/zhengchangbrasil" class="linkRedesSociais"><img src="../../../../img/1024px-Facebook_icon_(black).svg.png" id="facebook" width="35px"></a>
+                    <a href="https://www.instagram.com/zhengchangbrasil/" class="linkRedesSociais"><img src="../../../../img/instagram-circular-black-icon-vector-29783030-removebg-preview_updated.png" id="instagram" class="redesSociais" width="35px"></a>
+                    <a href="https://www.linkedin.com/company/zhengchangbrasil/mycompany/" class="linkRedesSociais"><img src="../../../../img/linkedin_black_logo_icon_147114.png" id="linkedin" class="redesSociais" width="35px"></a>
+                </div>
             </div>
         </footer>
         <hr>

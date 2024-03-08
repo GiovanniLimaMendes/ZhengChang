@@ -18,9 +18,9 @@ if ($mysqli->connect_error){
 
 if (isset($_POST['enviar'])){
     $setor      = $_POST['setor'];
-    $email      = $_POST['email'];
     $titulo     = $_POST['titulo'];
     $descricao  = $_POST['descricao'];
+    $email      = $_SESSION['email'];
     $usuario_id = $_SESSION['usuario_id'];
 
     $sql = "INSERT INTO chamados (setor, email, titulo, descricao, situacao, usuario_id) VALUES ('$setor', '$email', '$titulo', '$descricao' , 'Aguardando', '$usuario_id')";

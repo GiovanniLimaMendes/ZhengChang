@@ -89,47 +89,90 @@ include('../../protect.php');
             </div>
         </header>
         <main class="abrirChamado">
-            <div id="main">
-                <form method="post">
-                    <p class="text">Selecione o setor que deseja contatar:</p>
-                    <select id="setor" class="formularioChamados" name="setor">
-                        <option>TI</option>
-                        <option>Engenharia</option>
-                        <option>Comercial</option>
-                        <option>Financeiro</option>
-                        <option>Manutenção</option>
-                        <option>Qualidade</option>
-                        <option>PCP</option>
-                    </select>
-                    <p class="text">E-mail:</p>
-                    <input type="email" class="formularioChamados" id="email" name="email">
-                    <p class="text">Título:</p>
-                    <input type="text" class="formularioChamados" id="titulo" name="titulo">
-                    <p class="text">Descrição:</p>
-                    <textarea name="descricao" class="formularioChamados" id="descricao" cols="30" rows="10" name="descricao"></textarea><br>
-                    <input type="submit" class="formularioChamados" value="Abrir Chamado" id="enviar" name="enviar">
-                </form>
+            <div class="classes">
+                <p>SELECIONE A CLASSE DO SERVIÇO DESEJADO:</p>
             </div>
+            <hr class="hrClass">
+            <div id="main">
+                <form method="post" id="options">
+                    <div class="opcoes">
+                        <a href="#" id="computadores" class="opcao">
+                        <img src="../../../img/computer-solid.svg" width="50px"><br>
+                        <span class="item-description">
+                        Computadores
+                        </span>
+                        </a>
+                    </div>
+                    <div class="opcoes">
+                        <a href="#" id="internet" class="opcao">
+                        <img src="../../../img/wifi-solid.svg" width="45px"><br>
+                        <span class="item-description">
+                        Internet
+                        </span>
+                        </a>
+                    </div>
+                    <div class="opcoes">
+                        <a href="#" id="impressora" class="opcao">
+                        <img src="../../../img/print-solid.svg" width="40px"><br>
+                        <span class="item-description">
+                        Impressora
+                        </span>
+                        </a>
+                    </div>
+                    <div class="opcoes">
+                        <a href="#" id="telefone" class="opcao">
+                        <img src="../../../img/phone-volume-solid.svg" width="40px"><br>
+                        <span class="item-description">
+                        Telefone Ramal
+                        </span>
+                        </a>
+                    </div>
+                    <div class="opcoes">
+                        <a href="#" id="email" class="opcao">
+                        <img src="../../../img/envelope-solid.svg" width="40px"><br>
+                        <span class="item-description">
+                        E-mail
+                        </span>
+                        </a>
+                    </div>
+                    <div class="opcoes">
+                        <a href="#" id="outro" class="opcao">
+                        <img src="../../../img/ellipsis-solid.svg" width="40px"><br>
+                        <span class="item-description">
+                        Outro
+                        </span>
+                        </a>
+                    </div>
+                
+            </div>
+            <div id="servicosComputadores"></div>
+            <div id="servicosInternet"></div>
+            <div id="servicosImpressora"></div>
+            <div id="servicosTelefone"></div>
+            <div id="servicosEmail"></div>
+            </form>
         </main>
         <hr>
         <footer id="rodape">
-            <img src="../../../img/02 - Logo ZCBR Retangular.png" id="logoRodape">
-            <div id="rodapeFaleConosco">
-                <h2 class="info">Fale Conosco</h2>
-                <p class="info">+55 19 3761-3700</p>
-                <p class="info">contato@calibras.com.br</p>
-            </div>
-            <div id="rodapeEndereco">
-                <h2 class="info">Endereço</h2>
-                <p class="info">Estrada Velha Campinas Monte Mor.</p>
-                <p class="info">Km 01. n°718, Campinas-SP | 13058-326</p>
-            </div>
-            <div id="rodapeRedesSociais">
-                <h2 class="info">Redes Sociais</h2>
-                <a href="https://www.facebook.com/zhengchangbrasil" class="linkRedesSociais"><img src="../../../img/1024px-Facebook_icon_(black).svg.png" id="facebook" width="35px"></a>
-                <a href="https://www.instagram.com/zhengchangbrasil/" class="linkRedesSociais"><img src="../../../img/instagram-circular-black-icon-vector-29783030-removebg-preview_updated.png" id="instagram" class="redesSociais" width="35px"></a>
-                <a href="https://www.linkedin.com/company/zhengchangbrasil/mycompany/" class="linkRedesSociais"><img src="../../../img/linkedin_black_logo_icon_147114.png" id="linkedin" class="redesSociais" width="35px"></a>
-            </div>
+                <img src="../../../img/02 - Logo ZCBR Retangular.png" id="logoRodape">
+                <div id="rodapeFaleConosco">
+                    <h2 class="info">Fale Conosco</h2>
+                    <p class="info">+55 19 3761-3700</p>
+                    <p class="info">contato@calibras.com.br</p>
+                </div>
+                <div id="rodapeEndereco">
+                    <h2 class="info">Endereço</h2>
+                    <p class="info">Estrada Velha Campinas Monte Mor.</p>
+                    <p class="info">Km 01. n°718, Campinas-SP | 13058-326</p>
+                </div>
+                <div id="rodapeRedesSociais">
+                    <h2 class="info">Redes Sociais</h2>
+                    <div id="redesSociaisLink">
+                        <a href="https://www.facebook.com/zhengchangbrasil" class="linkRedesSociais"><img src="../../../img/1024px-Facebook_icon_(black).svg.png" id="facebook" class="redesSociais" width="35px"></a>
+                        <a href="https://www.instagram.com/zhengchangbrasil/" class="linkRedesSociais"><img src="../../../img/instagram-circular-black-icon-vector-29783030-removebg-preview_updated.png" id="instagram" class="redesSociais" width="35px"></a>
+                        <a href="https://www.linkedin.com/company/zhengchangbrasil/mycompany/" class="linkRedesSociais"><img src="../../../img/linkedin_black_logo_icon_147114.png" id="linkedin" class="redesSociais" width="35px"></a>
+                    </div>
+                </div>
         </footer>
         <hr>
     </div>
