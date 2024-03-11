@@ -100,37 +100,35 @@ include('reservas.php');
                 <hr>
             </div>
         </header>
-        <main class="principal">
-            <div class="container">
-                <div class="main">
-                    <form method="post">
-                        <p>E-mail:</p>
-                        <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email"><br>
-                        <p>Responsável pela Reserva:</p>
-                        <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel">
-                        <p>Motivo da Reserva:</p>
-                        <input type="text" class="formulario" id="motivo" placeholder="Exemplo: Reunião com cliente" name="motivo">
-                        <p>Data da Reserva:</p>
-                        <input type="date" class="data" id="data" name="data">
+        <main class="menu">
+            <h1>Selecione a opção desejada:</h1>
+            <div class="optionsMenu">
+            <a onclick="">
+                <div class="optionMenu">
+                    <h1>Reservar carro</h1>
                 </div>
-                <div class="main3">
-                        <p>Horário de Inicio:</p>
-                        <input type="time" class="formulario" id="inicio" name="inicio">
-                        <p>Horário Final:</p>
-                        <input type="time" class="formulario" id="fim" name="final">
-                        <p>Sala que irá Utilizar:</p>
-                        <select class="sala" id="sala" name="sala">
-                            <option></option>
-                            <option>Sala de reuniao comercial</option>
-                            <option>Sala de reuniao administrativo</option>
-                            <option>Sala de treinamento</option>
-                        </select>
-                        <p>Observação:</p>
-                        <input type="text" class="formulario" id="observacao" name="observacao">
+            </a>
+            <a onclick="fazerReserva()">
+                <div class="optionMenu">
+                    <h1>Reservar sala de reunião</h1>
                 </div>
+            </a>
+            <a onclick="reservas()">
+                <div class="optionMenu">
+                    <h1>Reservas</h1>
+                </div>
+            </a>
+            <a onclick="chamado()">
+                <div class="optionMenu">
+                    <h1>Abrir chamado</h1>
+                </div>
+            </a>
+            <a onclick="meusChamados()">
+                <div class="optionMenu">
+                    <h1>Meus chamados</h1>
+                </div>
+            </a>
             </div>
-            <input type="submit" class="formulario" id="botao" name="enviar" onclick="reserva()">
-            </form>
         </main>
         <hr>
         <footer id="rodape">

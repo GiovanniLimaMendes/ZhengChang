@@ -90,8 +90,8 @@ include('../../protect.php');
         </header>
         <main class="conteudo">
         <form method="GET">
-            <label for="sala">Selecione a sala:</label>
-            <select name="sala" id="sala">
+            <label for="sala" class="filtroReservas">Selecione a sala:</label>
+            <select name="sala" id="sala" class="filtroReservas">
                 <option value="Sala de reuniao comercial">Sala de reuniao comercial</option>
                 <option value="Sala de reuniao administrativo">Sala de reuniao administrativo</option>
                 <option value="Sala de treinamento">Sala de treinamento</option>

@@ -101,36 +101,7 @@ include('reservas.php');
             </div>
         </header>
         <main class="principal">
-            <div class="container">
-                <div class="main">
-                    <form method="post">
-                        <p>E-mail:</p>
-                        <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email"><br>
-                        <p>Responsável pela Reserva:</p>
-                        <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel">
-                        <p>Motivo da Reserva:</p>
-                        <input type="text" class="formulario" id="motivo" placeholder="Exemplo: Reunião com cliente" name="motivo">
-                        <p>Data da Reserva:</p>
-                        <input type="date" class="data" id="data" name="data">
-                </div>
-                <div class="main3">
-                        <p>Horário de Inicio:</p>
-                        <input type="time" class="formulario" id="inicio" name="inicio">
-                        <p>Horário Final:</p>
-                        <input type="time" class="formulario" id="fim" name="final">
-                        <p>Sala que irá Utilizar:</p>
-                        <select class="sala" id="sala" name="sala">
-                            <option></option>
-                            <option>Sala de reuniao comercial</option>
-                            <option>Sala de reuniao administrativo</option>
-                            <option>Sala de treinamento</option>
-                        </select>
-                        <p>Observação:</p>
-                        <input type="text" class="formulario" id="observacao" name="observacao">
-                </div>
-            </div>
-            <input type="submit" class="formulario" id="botao" name="enviar" onclick="reserva()">
-            </form>
+            
         </main>
         <hr>
         <footer id="rodape">

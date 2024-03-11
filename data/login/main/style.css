@@ -32,6 +32,33 @@ p{
     text-align: center;
 }
 
+.meusChamados{
+    margin: auto;
+    align-items: center;
+    height: 70vh;
+    width: 193vh;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.menu{
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+    width: 193vh;
+    text-align: center;
+}
+
+.menu > a{
+    display: flex;
+    margin: auto;
+}
+
+.menu > h1{
+    display: block !important;
+}
+
 .abrirChamado{
     margin: auto;
     align-items: center;
@@ -240,10 +267,12 @@ p{
 
 .container{
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
     margin: auto;
     margin-top: 75px;
+    overflow-x: hidden;
 }
 
 .main{
@@ -336,7 +365,7 @@ p{
 #logoRodape{
     display: grid;
     grid-area: rodape;
-    width: 200px;
+    width: 150px;
 }
 
 #rodape{
@@ -421,7 +450,6 @@ tr:hover {
     margin: auto;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     box-shadow: 0px 1px 2px black;
 }
 
@@ -527,6 +555,74 @@ textarea{
     box-shadow: 1px 1px 2px black;
 }
 
+.optionsMenu{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.optionMenu{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #1c947c;
+    width: 300px;
+    height: 150px;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.optionMenu:hover{
+    background-color: #2c8080;
+}
+
+#exibirFormulario{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    text-align: center;
+}
+
+#formularioEnviarEmail > form > p{
+    margin-top: 35px;
+}
+
+#nomeChamado{
+    width: 350px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #1c947c86;
+    font-size: 16px;
+}
+
+#descricao{
+    width: 350px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #1c947c86;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.optionChamado{
+    display: flex;
+    background-color: transparent;
+    border: none;
+}
+
 /* Estilos para tela média (1280x720) */
 @media screen and (max-width: 2560px) {
     hr{
@@ -563,6 +659,10 @@ textarea{
         height: 50vh;
     }
 
+    .menu{
+        height: 50vh;
+    }
+
     .container{
         margin-top: 0;
     }
@@ -580,19 +680,23 @@ textarea{
     }
 
     .info{
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .redesSociais{
-        width: 40px;
+        width: 30px;
         margin-top: 10px;
     }
 
     #facebook{
-        width: 40px;
+        width: 30px;
     }
 
     .principal{
+        height: 50vh;
+    }
+
+    .menu{
         height: 50vh;
     }
 
@@ -644,6 +748,11 @@ textarea{
         overflow-x: hidden;
     }
 
+    .menu{
+        height: 50vh;
+        overflow-x: hidden;
+    }
+
     .abrirChamado{
         height: 50vh;
     }
@@ -690,6 +799,10 @@ textarea{
         height: 50vh;
     }
 
+    .menu{
+        height: 50vh;
+    }
+
     .container{
         margin-top: 0;
     }
@@ -728,6 +841,10 @@ textarea{
     }
 
     .principal{
+        height: 50vh;
+    }
+
+    .menu{
         height: 50vh;
     }
 

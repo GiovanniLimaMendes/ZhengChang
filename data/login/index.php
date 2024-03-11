@@ -34,8 +34,9 @@ if(isset($_POST['usuario']) && isset($_POST['senha'])){
             $_SESSION['usuario'] = $usuario['usuario'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['usuario_id'] = $usuario['usuario_id'];
+            $_SESSION['email'] = $usuario['email'];
 
-            header("Location: main/index.php");
+            header("Location: main/menu.php");
         }else{
             echo "<p id='erro'>Falha ao logar! Usuário ou senha incorretos</p>";
         }

@@ -95,13 +95,13 @@ $result = $mysqli->query($sql);
                 <hr>
             </div>
         </header>
-        <main class="principal">
+        <main class="meusChamados">
             <div id="main">
                 <?php
                 // Exiba os chamados
                 if ($result->num_rows > 0) {
                     echo "<table border='1'>";
-                    echo "<tr><th>ID</th><th>Título</th><th>Descrição</th><th>Status</th><th>Data de Criação</th>";
+                    echo "<tr><th>ID</th><th>Assunto</th><th>Descrição</th><th>Status</th><th>Data de Criação</th>";
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row['id'] . "</td></td>";

@@ -2,7 +2,7 @@ document.getElementById('open_btn').addEventListener('click', function (){
     document.getElementById('sidebar').classList.toggle('open-sidebar')
 })
 
-function menu(){
+function fazerReserva(){
     window.location.assign('http://192.168.1.15/zhengchang/data/login/main/index.php');
 }
 
@@ -18,280 +18,80 @@ function meusChamados(){
     window.location.assign('http://192.168.1.15/zhengchang/data/login/main/chamados/todoschamados/meuschamados.php');
 }
 
-document.getElementById('computadores').addEventListener('click', function(event) {
-    event.preventDefault();
-    exibirServicosComputadores();
-});
+function servicosComputadores(){
 
-function exibirServicosComputadores() {
-
-    limparServicos();
-    
-    var htmlServicosComputadores = `
-        
-        <div class="todosServicos">
-            <p selectService>SELECIONE O SERVIÇO DESEJADO:</p>
-            <ul>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="descricaoServico">
-                            Computador não liga
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Sem imagem
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Formatar
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-            </ul>
-        </div>
-    `;
-
-    document.getElementById('servicosComputadores').innerHTML = htmlServicosComputadores;
+    ocultarServico();
+    var servicosComputadores = document.getElementById("servicosComputadores");
+    servicosComputadores.style.display = "block";
+    console.log();
 }
 
+function servicosInternet(){
 
-document.getElementById('internet').addEventListener('click', function(event) {
-    event.preventDefault();
-    exibirServicosInternet();
-});
-
-function exibirServicosInternet() {
-
-    limparServicos();
-    
-    var htmlServicosInternet = `
-        
-        <div class="todosServicos">
-            <p selectService>SELECIONE O SERVIÇO DESEJADO:</p>
-            <ul>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="descricaoServico">
-                            Sem internet
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Site não abre
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Internet lenta
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-            </ul>
-        </div>
-    `;
-
-    document.getElementById('servicosInternet').innerHTML = htmlServicosInternet;
+    ocultarServico();
+    var servicosInternet = document.getElementById("servicosInternet");
+    servicosInternet.style.display = "block";
 }
 
-document.getElementById('impressora').addEventListener('click', function(event) {
-    event.preventDefault();
-    exibirServicosImpressora();
-});
+function servicosImpressora(){
 
-function exibirServicosImpressora() {
-
-    limparServicos();
-    
-    var htmlServicosImpressora = `
-        
-        <div class="todosServicos">
-            <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
-            <ul>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="descricaoServico">
-                            Instalar impressora
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Não imprime
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                        Não está digitalizando
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-            </ul>
-        </div>
-    `;
-
-
-    document.getElementById('servicosImpressora').innerHTML = htmlServicosImpressora;
+    ocultarServico();
+    var servicosImpressora = document.getElementById("servicosImpressora");
+    servicosImpressora.style.display = "block";
 }
 
-document.getElementById('telefone').addEventListener('click', function(event) {
-    event.preventDefault();
-    exibirServicosTelefone();
-});
+function servicosTelefone(){
 
-function exibirServicosTelefone() {
-
-    limparServicos();
-    
-    var htmlServicosTelefone = `
-        
-        <div class="todosServicos">
-            <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
-            <ul>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="descricaoServico">
-                            Não recebo ligações
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Não consigo fazer ligações
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                        Mudo
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                        Sem serviço
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-            </ul>
-        </div>
-    `;
-
-    document.getElementById('servicosTelefone').innerHTML = htmlServicosTelefone;
-}
-document.getElementById('email').addEventListener('click', function(event) {
-    event.preventDefault();
-    exibirServicosEmail();
-});
-
-function exibirServicosEmail() {
-
-    limparServicos();
-    
-    var htmlServicosEmail = `
-        
-        <div class="todosServicos">
-            <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
-            <ul>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="descricaoServico">
-                            Não recebo e-mail
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#" id="enviarEmail">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                            Não consigo enviar e-mail
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                        E-mail caindo no lixo eletrônico
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-                <li class="servicos">
-                    <a href="#" id="configEmail">
-                        <img src="../../../img/chevron-right-solid.svg" width="7px">
-                        <span class="servicoDescricao">
-                        Configurar e-mail
-                        </span>
-                    </a>
-                </li>
-                <hr class="hrClass">
-            </ul>
-        </div>
-    `;
-    
-    
-    document.getElementById('servicosEmail').innerHTML = htmlServicosEmail;
+    ocultarServico();
+    var servicosTelefone = document.getElementById("servicosTelefone");
+    servicosTelefone.style.display = "block";
 }
 
-function limparServicos() {
+function servicosEmail(){
 
-    document.getElementById('servicosComputadores').innerHTML = '';
+    ocultarServico();
+    var servicosEmail = document.getElementById("servicosEmail");
+    servicosEmail.style.display = "block";
+}
 
-    document.getElementById('servicosInternet').innerHTML = '';
+function ocultarServico(){
+    var servicosComputadores = document.getElementById("servicosComputadores");
+    servicosComputadores.style.display = "none";
 
-    document.getElementById('servicosImpressora').innerHTML = '';
+    var servicosInternet = document.getElementById("servicosInternet");
+    servicosInternet.style.display = "none";
 
-    document.getElementById('servicosTelefone').innerHTML = '';
+    var servicosImpressora = document.getElementById("servicosImpressora");
+    servicosImpressora.style.display = "none";
 
-    document.getElementById('servicosEmail').innerHTML = '';
+    var servicosTelefone = document.getElementById("servicosTelefone");
+    servicosTelefone.style.display = "none";
+
+    var servicosEmail = document.getElementById("servicosEmail");
+    servicosEmail.style.display = "none";
+}
+
+function exibirFormulario() {
+
+    // Obtém o formulário a ser exibido
+    var formulario = document.getElementById('exibirFormulario');
+
+    // Exibe o formulário
+    formulario.style.display = 'block';
+}
+
+// Seleciona todos os elementos com a classe 'optionChamado'
+var optionChamado = document.getElementsByClassName("optionChamado");
+
+// Adiciona um event listener a cada elemento com a classe 'optionChamado'
+for (var i = 0; i < optionChamado.length; i++) {
+    optionChamado[i].addEventListener("click", function(event) {
+        event.preventDefault();
+
+        // Obtém o conteúdo do elemento clicado
+        var conteudoSpan = this.innerText;
+
+        // Atribui o conteúdo ao campo oculto
+        document.getElementById("dadosParaPHP").value = conteudoSpan;
+    });
 }

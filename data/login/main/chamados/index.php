@@ -96,7 +96,7 @@ include('../../protect.php');
             <div id="main">
                 <form method="post" id="options">
                     <div class="opcoes">
-                        <a href="#" id="computadores" class="opcao">
+                        <a href="#" id="computadores" class="opcao" onclick="servicosComputadores()">
                         <img src="../../../img/computer-solid.svg" width="50px"><br>
                         <span class="item-description">
                         Computadores
@@ -104,7 +104,7 @@ include('../../protect.php');
                         </a>
                     </div>
                     <div class="opcoes">
-                        <a href="#" id="internet" class="opcao">
+                        <a href="#" id="internet" class="opcao" onclick="servicosInternet()">
                         <img src="../../../img/wifi-solid.svg" width="45px"><br>
                         <span class="item-description">
                         Internet
@@ -112,7 +112,7 @@ include('../../protect.php');
                         </a>
                     </div>
                     <div class="opcoes">
-                        <a href="#" id="impressora" class="opcao">
+                        <a href="#" id="impressora" class="opcao" onclick="servicosImpressora()">
                         <img src="../../../img/print-solid.svg" width="40px"><br>
                         <span class="item-description">
                         Impressora
@@ -120,7 +120,7 @@ include('../../protect.php');
                         </a>
                     </div>
                     <div class="opcoes">
-                        <a href="#" id="telefone" class="opcao">
+                        <a href="#" id="telefone" class="opcao" onclick="servicosTelefone()">
                         <img src="../../../img/phone-volume-solid.svg" width="40px"><br>
                         <span class="item-description">
                         Telefone Ramal
@@ -128,7 +128,7 @@ include('../../protect.php');
                         </a>
                     </div>
                     <div class="opcoes">
-                        <a href="#" id="email" class="opcao">
+                        <a href="#" id="email" class="opcao" onclick="servicosEmail()">
                         <img src="../../../img/envelope-solid.svg" width="40px"><br>
                         <span class="item-description">
                         E-mail
@@ -136,21 +136,220 @@ include('../../protect.php');
                         </a>
                     </div>
                     <div class="opcoes">
-                        <a href="#" id="outro" class="opcao">
+                        <a href="#" id="outro" class="opcao" onclick="exibirFormulario()">
                         <img src="../../../img/ellipsis-solid.svg" width="40px"><br>
                         <span class="item-description">
                         Outro
                         </span>
                         </a>
                     </div>
-                
             </div>
-            <div id="servicosComputadores"></div>
-            <div id="servicosInternet"></div>
-            <div id="servicosImpressora"></div>
-            <div id="servicosTelefone"></div>
-            <div id="servicosEmail"></div>
-            </form>
+            <div  id="servicosComputadores" name="optionChamado" class="todosServicos" style="display: none;">
+                <form method="post">
+                    <div class="todosServicos">
+                    <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
+                    <ul>
+                        <hr class="hrClass">
+                        <li class="servicos">
+                            <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                                <img src="../../../img/chevron-right-solid.svg" width="7px">
+                                <span class="servicoDescricao" id="option1">
+                                    Computador nao liga
+                                </span>
+                            </a>
+                        </li>
+                        <hr class="hrClass">
+                        <li class="servicos">
+                            <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                                <img src="../../../img/chevron-right-solid.svg" width="7px">
+                                <span class="servicoDescricao" id="option2">
+                                    Computador sem imagem
+                                </span>
+                            </a>
+                        </li>
+                        <hr class="hrClass">
+                        <li class="servicos">
+                            <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                                <img src="../../../img/chevron-right-solid.svg" width="7px">
+                                <span class="servicoDescricao" id="option3">
+                                    Formatar computador
+                                </span>
+                            </a>
+                        </li>
+                        <hr class="hrClass">
+                    </ul>
+                    <form>
+                </div>
+            </div>
+            <div id="servicosInternet" id="teste"style="display: none;">
+            <div class="todosServicos">
+            <p selectService>SELECIONE O SERVIÇO DESEJADO:</p>
+            <ul>
+                <hr class="hrClass">
+                <li class="servicos">
+                    <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                        <img src="../../../img/chevron-right-solid.svg" width="7px">
+                        <span class="descricaoServico" id="option4">
+                            Sem internet
+                        </span>
+                    </a>
+                </li>
+                <hr class="hrClass">
+                <li class="servicos">
+                    <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                        <img src="../../../img/chevron-right-solid.svg" width="7px">
+                        <span class="servicoDescricao" id="option5">
+                            Site não abre
+                        </span>
+                    </a>
+                </li>
+                <hr class="hrClass">
+                <li class="servicos">
+                    <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                        <img src="../../../img/chevron-right-solid.svg" width="7px">
+                        <span class="servicoDescricao" id="option6">
+                            Internet lenta
+                        </span>
+                    </a>
+                </li>
+                <hr class="hrClass">
+            </ul>
+            </div>
+            </div>
+            <div id="servicosImpressora" name="optionChamado" class="todosServicos" style="display: none;">
+                <div class="todosServicos">
+                <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
+                <ul>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="descricaoServico" id="option7">
+                                Instalar impressora
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option8">
+                                Nao imprime
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option9">
+                            Nao esta digitalizando
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                </ul>
+                </div>
+            </div>
+            <div id="servicosTelefone" name="optionChamado" class="todosServicos" style="display: none;">
+                <div class="todosServicos">
+                <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
+                <ul>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="descricaoServico" id="option10">
+                                Nao recebo ligacoes
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option11">
+                                Nao consigo fazer ligacoes
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option12">
+                            Telefone Mudo
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" id="enviarDados" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option13">
+                            Sem servico
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                </ul>
+                </div>
+            </div>
+            <div id="servicosEmail" name="optionChamado" class="todosServicos" style="display: none;">
+                <div class="todosServicos">
+                <p id="selectService">SELECIONE O SERVIÇO DESEJADO:</p>
+                <ul>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="descricaoServico" id="option14">
+                                Nao recebo e-mail
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" id="enviarEmail" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option15">
+                                Nao consigo enviar e-mail
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option16">
+                            E-mail caindo no lixo eletronico
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                    <li class="servicos">
+                        <a href="#" id="configEmail" class="optionChamado" name="optionChamado" onclick="exibirFormulario()" id="enviarDados">
+                            <img src="../../../img/chevron-right-solid.svg" width="7px">
+                            <span class="servicoDescricao" id="option17">
+                            Configurar e-mail
+                            </span>
+                        </a>
+                    </li>
+                    <hr class="hrClass">
+                </ul>
+                </div>
+            </div>
+                
+            <div id="exibirFormulario" style="display: none;">
+                <form method="post">
+                    <input type="text" name="dadosParaPHP" id="dadosParaPHP" style="display: none;">
+                    <p>Solicitante:</p>
+                    <input type="text" name="nome" id="nomeChamado"value="<?php echo $_SESSION['usuario']; ?>" readonly>
+                    <p>Descrição:</p>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea><br>
+                    <input type="submit" class="formulario" id="botao" value="enviar" name="enviar">
+                </form>
+            </div>
         </main>
         <hr>
         <footer id="rodape">
