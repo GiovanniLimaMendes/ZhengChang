@@ -42,6 +42,14 @@ include('../../protect.php');
                     </a>
                 </li>
                 <li class="side-item">
+                    <a onclick="fazerReserva()">
+                        <img src="../../../img/calendar-days-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
                     <a onclick="reservas()">
                         <img src="../../../img/thumbtack-solid.svg" width="25px">
                         <span class="item-description">

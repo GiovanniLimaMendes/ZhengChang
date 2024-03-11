@@ -2,6 +2,10 @@ document.getElementById('open_btn').addEventListener('click', function (){
     document.getElementById('sidebar').classList.toggle('open-sidebar')
 })
 
+function menu(){
+    window.location.assign('http://192.168.1.15/zhengchang/data/login/main/menu.php');
+}
+
 function fazerReserva(){
     window.location.assign('http://192.168.1.15/zhengchang/data/login/main/index.php');
 }

@@ -37,7 +37,7 @@ p{
     align-items: center;
     height: 70vh;
     width: 193vh;
-    overflow-x: hidden;
+    overflow: hidden;
     text-align: center;
 }
 
@@ -83,7 +83,7 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: #ffffff00;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: absolute;

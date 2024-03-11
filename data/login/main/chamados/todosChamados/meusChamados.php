@@ -50,6 +50,14 @@ $result = $mysqli->query($sql);
                     </a>
                 </li>
                 <li class="side-item">
+                    <a onclick="fazerReserva()">
+                        <img src="../../../../img/calendar-days-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
                     <a onclick="reservas()">
                         <img src="../../../../img/thumbtack-solid.svg" width="25px">
                         <span class="item-description">
@@ -96,7 +104,7 @@ $result = $mysqli->query($sql);
             </div>
         </header>
         <main class="meusChamados">
-            <div id="main">
+            <div id="mainChamados">
                 <?php
                 // Exiba os chamados
                 if ($result->num_rows > 0) {
