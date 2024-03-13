@@ -15,7 +15,7 @@ include('reservas.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="imagem/png" href="../../img/zhengchangdobrasil_logo-removebg-preview.png">
-    <title>Menu Principal</title>
+    <title>Fazer reserva de carro</title>
 </head>
 <body>
     <nav id="sidebar">
@@ -109,40 +109,36 @@ include('reservas.php');
             </div>
         </header>
         <hr>
-        <main class="menu">
-            <h2>Selecione a opção desejada:</h2>
-            <div class="optionsMenu">
-            <a onclick="fazerReservaCarro()">
-                <div class="optionMenu">
-                    <img src="../../img/car-solid (1).svg" alt="" width="35px">
-                    <h2>Reservar carro</h2>
+        <main class="principal">
+            <div class="container">
+                <div class="main">
+                    <form method="post">
+                        <p>E-mail:</p>
+                        <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email" value="<?php echo $_SESSION['email']; ?>"><br>
+                        <p>Responsável pela Reserva:</p>
+                        <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel"  value="<?php echo $_SESSION['nome']; ?>">
+                        <p>Motivo da Reserva:</p>
+                        <input type="text" class="formulario" id="motivo" placeholder="Exemplo: Reunião com cliente" name="motivo">
+                        <p>Data da Reserva:</p>
+                        <input type="date" class="data" id="data" name="data">
                 </div>
-            </a>
-            <a onclick="fazerReserva()">
-                <div class="optionMenu">
-                    <img src="../../img/calendar-days-solid (1).svg" alt="" width="35px">
-                    <h2>Reservar sala de reunião</h2>
+                <div class="main3">
+                        <p>Horário de Inicio:</p>
+                        <input type="time" class="formulario" id="inicio" name="inicio">
+                        <p>Horário Final:</p>
+                        <input type="time" class="formulario" id="fim" name="final">
+                        <p>Carro que irá Utilizar:</p>
+                        <select class="sala" id="sala" name="carro">
+                            <option></option>
+                            <option>Corolla FCY8C84</option>
+                            <option>Saveiro FHC5B72</option>
+                        </select>
+                        <p>Observação:</p>
+                        <input type="text" class="formulario" id="observacao" name="observacao">
                 </div>
-            </a>
-            <a onclick="reservas()">
-                <div class="optionMenu">
-                    <img src="../../img/thumbtack-solid (1).svg" alt="" width="25px">
-                    <h2>Reservas</h2>
-                </div>
-            </a>
-            <a onclick="chamado()">
-                <div class="optionMenu">
-                    <img src="../../img/phone-solid (1).svg" alt="" width="30px">
-                    <h2>Abrir chamado</h2>
-                </div>
-            </a>
-            <a onclick="meusChamados()">
-                <div class="optionMenu">
-                    <img src="../../img/ticket-solid (1).svg" alt="" width="35px">
-                    <h2>Meus chamados</h2>
-                </div>
-            </a>
             </div>
+            <input type="submit" class="formulario" id="botao" name="reservarCarro" onclick="reserva()">
+            </form>
         </main>
         <hr>
         <footer id="rodape">

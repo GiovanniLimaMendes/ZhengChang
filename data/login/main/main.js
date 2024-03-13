@@ -10,6 +10,10 @@ function fazerReserva(){
     window.location.assign('http://192.168.1.15/zhengchang/data/login/main/index.php');
 }
 
+function fazerReservaCarro(){
+    window.location.assign('http://192.168.1.15/zhengchang/data/login/main/reservaCarro.php');
+}
+
 function reservas(){
     window.location.assign('http://192.168.1.15/zhengchang/data/login/main/reservas/index.php');
 }
@@ -85,7 +89,7 @@ function exibirFormulario() {
 }
 
 // Seleciona todos os elementos com a classe 'optionChamado'
-var optionChamado = document.getElementsByClassName("optionChamado");
+var optionChamado = document.querySelectorAll(".optionChamado, #outro");
 
 // Adiciona um event listener a cada elemento com a classe 'optionChamado'
 for (var i = 0; i < optionChamado.length; i++) {

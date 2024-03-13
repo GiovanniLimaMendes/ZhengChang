@@ -43,6 +43,22 @@ include('../../protect.php');
                     </a>
                 </li>
                 <li class="side-item">
+                    <a onclick="fazerReserva()">
+                        <img src="../../../img/calendar-days-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva sala
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="fazerReservaCarro()">
+                        <img src="../../../img/car-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva carro
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
                     <a onclick="reservas()">
                         <img src="../../../img/thumbtack-solid.svg" width="25px">
                         <span class="item-description">
@@ -85,9 +101,10 @@ include('../../protect.php');
         <header id="cabecalho">
             <div>
                 <img src="../../../img/02 - Logo ZCBR Retangular.png" id="logoCabecalho" id="logo">
-                <hr>
+                
             </div>
         </header>
+        <hr>
         <main class="abrirChamado">
             <div class="classes">
                 <p>SELECIONE A CLASSE DO SERVIÇO DESEJADO:</p>
@@ -136,11 +153,11 @@ include('../../protect.php');
                         </a>
                     </div>
                     <div class="opcoes">
-                        <a href="#" id="outro" class="opcao" onclick="exibirFormulario()">
-                        <img src="../../../img/ellipsis-solid.svg" width="40px"><br>
-                        <span class="item-description">
-                        Outro
-                        </span>
+                        <a href="#" id="outro" class="opcao" name="optionChamado" onclick="exibirFormulario()">
+                            <img src="../../../img/ellipsis-solid.svg" width="40px"><br>
+                            <span class="item-description">
+                                Outro
+                            </span>
                         </a>
                     </div>
             </div>

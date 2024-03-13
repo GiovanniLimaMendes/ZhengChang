@@ -45,7 +45,15 @@ include('../../protect.php');
                     <a onclick="fazerReserva()">
                         <img src="../../../img/calendar-days-solid.svg" width="30px">
                         <span class="item-description">
-                            Fazer reserva
+                            Fazer reserva sala
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="fazerReservaCarro()">
+                        <img src="../../../img/car-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva carro
                         </span>
                     </a>
                 </li>
@@ -93,51 +101,76 @@ include('../../protect.php');
         <header id="cabecalho">
             <div>
                 <img src="../../../img/02 - Logo ZCBR Retangular.png" id="logoCabecalho" id="logo">
-                <hr>
+                
             </div>
         </header>
+        <hr>
         <main class="conteudo">
-        <form method="GET">
-            <label for="sala" class="filtroReservas">Selecione a sala:</label>
-            <select name="sala" id="sala" class="filtroReservas">
-                <option value="Sala de reuniao comercial">Sala de reuniao comercial</option>
-                <option value="Sala de reuniao administrativo">Sala de reuniao administrativo</option>
-                <option value="Sala de treinamento">Sala de treinamento</option>
-            </select>
-            <input type="submit" value="Filtrar">
-        </form>
+                <form method="GET">
+                    <div class="todasReservas">
+                        <label for="reserva" class="filtroReservas">Selecione a reserva:</label>
+                        <select name="reserva" id="sala" class="filtroReservas">
+                            <option value="Sala de reuniao comercial">Sala de reuniao comercial</option>
+                            <option value="Sala de reuniao administrativo">Sala de reuniao administrativo</option>
+                            <option value="Sala de treinamento">Sala de treinamento</option>
+                            <option value="Corolla FCY8C84">Corolla FCY8C84</option>
+                            <option value="Saveiro FHC5B72">Saveiro FHC5B72</option>
+                        </select>
+                        <input type="submit" value="Filtrar">
+                    </div>
+                </form>
+            
             <div id="reservas">
                 <?php
 
                 include('../../conexao.php');
                 
-                $sala = $_GET['sala'];
-                $sql_code = "SELECT * FROM reservas WHERE sala = '$sala'";
-                $results = $mysqli->query($sql_code);
+                $reserva = isset($_GET['reserva']) ? $_GET['reserva'] : ''; // Verifica se a chave 'reserva' está definida
+                $sql_code_reservas = "SELECT * FROM reservas WHERE sala = '$reserva'";
+                $sql_code_reserva_carro = "SELECT * FROM reservacarro WHERE carro = '$reserva'";
 
-                // Se houver resultados, exibir em uma tabela
-                if ($results->num_rows > 0) {
+                $results_reservas = $mysqli->query($sql_code_reservas);
+                $results_reserva_carro = $mysqli->query($sql_code_reserva_carro);
+
+                // Se houver resultados para ambas as consultas, exibir em uma tabela
+                if ($results_reservas->num_rows > 0 || $results_reserva_carro->num_rows > 0) {
                     echo "<table border='1'>";
-                    echo "<tr><th>Email do responsável</th><th>Responsável pela reserva</th><th>Motivo da reserva</th><th>Data</th><th>Sala</th><th>Horário de Início</th><th>Horário Final</th><th>Observação</th></tr>";
-                    while($row = $results->fetch_assoc()) {
+                    echo "<tr><th>Email do responsável</th><th>Responsável pela reserva</th><th>Motivo da reserva</th><th>Data</th><th>Sala/Carro</th><th>Horário de Início</th><th>Horário Final</th><th>Observação</th></tr>";
+
+                    // Exibir resultados da tabela 'reservas'
+                    while ($row_reservas = $results_reservas->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . $row["email"]. "</td>";
-                        echo "<td>" . $row["responsavel"]. "</td>";
-                        echo "<td>" . $row["motivo"]. "</td>";
-                        echo "<td>" . $row["data"]. "</td>";
-                        echo "<td>" . $row["sala"]. "</td>";
-                        echo "<td>" . $row["inicio"]. "</td>";
-                        echo "<td>" . $row["final"]. "</td>";
-                        echo "<td>" . $row["observacao"]. "</td>";
+                        echo "<td>" . $row_reservas["email"] . "</td>";
+                        echo "<td>" . $row_reservas["responsavel"] . "</td>";
+                        echo "<td>" . $row_reservas["motivo"] . "</td>";
+                        echo "<td>" . $row_reservas["data"] . "</td>";
+                        echo "<td>" . $row_reservas["sala"] . "</td>";
+                        echo "<td>" . $row_reservas["inicio"] . "</td>";
+                        echo "<td>" . $row_reservas["final"] . "</td>";
+                        echo "<td>" . $row_reservas["observacao"] . "</td>";
                         echo "</tr>";
                     }
+
+                    // Exibir resultados da tabela 'reservaCarro'
+                    while ($row_reserva_carro = $results_reserva_carro->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row_reserva_carro["email"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["responsavel"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["motivo"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["data"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["carro"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["inicio"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["final"] . "</td>";
+                        echo "<td>" . $row_reserva_carro["observacao"] . "</td>";
+                        echo "</tr>";
+                    }
+
                     echo "</table>";
                 } else {
                     echo "0 resultados";
                 }
 
                 $mysqli->close();
-
                 ?>
             </div>
         </main>

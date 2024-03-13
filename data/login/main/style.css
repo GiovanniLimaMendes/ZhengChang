@@ -9,11 +9,13 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #e3e9f7;
+    margin: auto;
+    padding: 0px;
 }
 
 hr{
     background-color: #1c947c;
-    width: 105%;
+    width: 99%;
     height: 4px;
     margin-left: 17px;
     border: none;
@@ -33,12 +35,20 @@ p{
 }
 
 .meusChamados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     align-items: center;
-    height: 70vh;
+    height: 79vh;
     width: 193vh;
-    overflow: hidden;
     text-align: center;
+}
+
+#mainChamados{
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
 }
 
 .menu{
@@ -69,21 +79,11 @@ p{
     overflow-x: hidden;
 }
 
-.conteudo{
-    display: flex;
-    margin: auto;
-    align-items: center;
-    height: 70vh;
-    width: 193vh;
-    overflow-x: hidden;
-    text-align: center;
-}
-
 #sidebar{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #ffffff00;
+    background-color: #ffffff;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: absolute;
@@ -160,6 +160,13 @@ p{
     justify-content: center;
     text-align: center;
     background-color: white;
+}
+
+#outro{
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .opcao{
@@ -267,18 +274,16 @@ p{
 
 .container{
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 75px;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 .main{
     display: flex;
     flex-direction: column;
-    margin: auto 0;
+    margin: auto;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -287,14 +292,14 @@ p{
 }
 
 .main3{
-    flex: 1;
     display: flex;
     flex-direction: column;
-    margin: auto 0;
+    margin: auto;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: large;
+    flex: 1;
 }
 
 #observacao{
@@ -363,8 +368,7 @@ p{
 }
 
 #logoRodape{
-    display: grid;
-    grid-area: rodape;
+    display: flex;
     width: 150px;
 }
 
@@ -387,11 +391,16 @@ p{
 
 #rodape > #rodapeFaleConosco{
     width: 200px;
+
 }
 
 #corpo{
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-left: 40px;
 }
 
@@ -411,6 +420,10 @@ p{
     display: flex;
 }
 
+#rodapeEndereco{
+    min-width: 300px;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -423,9 +436,8 @@ th, td {
     border: 1px solid #dddddd;
     text-align: center;
     padding: 8px;
+    width: 30vh;
     background-color: #ffffff;
-    width: 20vh;
-    overflow-x: hidden;
     text-overflow: ellipsis;
 }
 th {
@@ -440,17 +452,21 @@ tr:hover {
 }
 
 #reservas{
-    display: block;
+    display: flex;
     margin: auto;
+    flex-direction: column;
+    overflow-x: hidden;
+    text-align: center;
+    margin-top: 50px;
 }
 
 #main{
     display: flex;
     flex-direction: column;
     margin: auto;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0px 1px 2px black;
+    align-items: center;
+    overflow-x: auto;
 }
 
 #selectService{
@@ -557,8 +573,8 @@ textarea{
 
 .optionsMenu{
     display: flex;
-    justify-content: space-between;
-    padding: 100px;
+    justify-content: space-around;
+    margin-top: 100px;
 }
 
 .optionMenu{
@@ -623,11 +639,59 @@ textarea{
     border: none;
 }
 
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    overflow-x: hidden;
+    text-align: center;
+    height: 79.6vh;
+    width: 193vh;
+}
+
+.todasReservas{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    right: 0;
+}
+
+.todasReservas > select{
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    background-color: #1c947c;
+    color: white;
+    border: none;
+}
+
+.todasReservas > input{
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    height: 30px;
+    margin-top: 15px;
+    background-color: #1c947c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.todasReservas > label{
+    margin: 25px;
+    font-size: 20px;
+}
+
+.optionMenu > img{
+   margin: 15px;
+}
+
 /* Estilos para tela média (1280x720) */
-@media screen and (max-width: 2560px) {
-    hr{
-        width: 156rem;
-    }
+@media only screen and (max-width: 2560px) {
 
     #logoRodape{
         margin-left: 100px;
@@ -669,10 +733,7 @@ textarea{
 }
 
 /* Estilos para tela média (1920x1080) */
-@media screen and (max-width: 1920px) {
-    hr{
-        width: 116.4rem;
-    }
+@media only screen and (max-width: 1920px) {
 
     .abrirChamado{
         width: 100%;
@@ -688,7 +749,22 @@ textarea{
         margin-top: 10px;
     }
 
+    #rodapeRedesSociais > .info{
+        margin-left: -50px;
+    }
+
+    #rodapeRedesSociais{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #rodapeEndereco{
+        min-width: 350px;
+        margin: 0 auto;
+    }
+
     #facebook{
+        margin-left: -50px;
         width: 30px;
     }
 
@@ -704,15 +780,82 @@ textarea{
         margin-top: 0;
     }
 
-    th, td{
-        width: 50vh;
+    .meusChamados{
+        width: 204vh;
+    }
+}
+
+/* Estilos para tela média (1920x1080) */
+@media only screen and (max-width: 960px) {
+
+    .abrirChamado{
+        width: 100%;
+        height: 69vh;
+    }
+
+    .info{
+        font-size: 15px;
+    }
+
+    .redesSociais{
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    #rodapeRedesSociais > .info{
+        margin-left: -50px;
+    }
+
+    #rodapeRedesSociais{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .optionMenu{
+        justify-content: start;
+        margin-top: 25px;
+    }
+
+    #rodapeEndereco{
+        min-width: 350px;
+        margin: 0 auto;
+    }
+
+    #facebook{
+        margin-left: -50px;
+        width: 30px;
+    }
+
+    .principal{
+        height: 50vh;
+    }
+
+    .menu{
+        display: flex;
+        height: 50vh;
+        width: 100vh;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .optionsMenu{
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .container{
+        margin-top: 0;
+    }
+
+    .meusChamados{
+        width: 204vh;
     }
 }
 
 /* Estilos para tela média (1366x768) */
 @media screen and (max-width: 1366px) {
     hr{
-        width: 81.8rem;
+        width: 98%;
     }
 
     #logoRodape{
@@ -721,11 +864,7 @@ textarea{
     }
 
     .info{
-        font-size: 18px;
-    }
-
-    #rodapeEndereco > .info{
-        margin-left: -425px;
+        font-size: 15px;
     }
 
     .redesSociais{
@@ -771,7 +910,7 @@ textarea{
 /* Estilos para tela média (1360x768) */
 @media screen and (max-width: 1360px) {
     hr{
-        width: 82.8rem;
+        width: 98%;
     }
 
     #logoRodape{
@@ -780,18 +919,21 @@ textarea{
     }
 
     .info{
-        margin-left: 50px;
         font-size: 15px;
     }
 
     .redesSociais{
         width: 30px;
-        margin-left: 15px;
+        margin-left: 10px;
         margin-top: 10px;
     }
 
+    #rodapeRedesSociais > .info{
+        margin-left: -50px;
+    }
+
     #facebook{
-        margin-left: 50px;
+        margin-left: -50px;
         width: 30px;
     }
 
@@ -810,8 +952,9 @@ textarea{
 
 /* Estilos para tela média (1280x720) */
 @media screen and (max-width: 1280px) {
+
     hr{
-        width: 76.4rem;
+        width: 98%;
     }
 
     #logoRodape{
@@ -836,11 +979,12 @@ textarea{
     }
 
     #facebook{
-        margin-left: 50px;
+        margin-left: -50px;
         width: 30px;
     }
 
     .principal{
+        width: 170vh;
         height: 50vh;
     }
 

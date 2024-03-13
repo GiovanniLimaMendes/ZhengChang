@@ -13,7 +13,7 @@ include('atualizar_situacao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="imagem/png" href="../../../../img/zhengchangdobrasil_logo-removebg-preview.png">
-    <title>Abrir Chamado</title>
+    <title>Fechar Chamados</title>
 </head>
 <body>
     <nav id="sidebar">
@@ -47,7 +47,15 @@ include('atualizar_situacao.php');
                     <a onclick="fazerReserva()">
                         <img src="../../../../img/calendar-days-solid.svg" width="30px">
                         <span class="item-description">
-                            Fazer reserva
+                            Fazer reserva sala
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="fazerReservaCarro()">
+                        <img src="../../../../img/car-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva carro
                         </span>
                     </a>
                 </li>
@@ -94,11 +102,13 @@ include('atualizar_situacao.php');
         <header id="cabecalho">
             <div>
                 <img src="../../../../img/02 - Logo ZCBR Retangular.png" id="logoCabecalho" id="logo">
-                <hr>
+                
             </div>
         </header>
-        <main class="conteudo">
-            <div id="main">
+        <hr>
+        <main class="meusChamados">
+            <div id="mainChamados">
+                
                 <?php
 
                 $sql_code = "SELECT * FROM chamados";
@@ -106,11 +116,10 @@ include('atualizar_situacao.php');
 
                 if ($results->num_rows > 0) {
                     echo "<table border='1'>";
-                    echo "<tr><th>ID do chamado</th><th>Setor</th><th>Email do usuário</th><th>Título do chamado</th><th>Descrição do chamado</th><th>Situação do chamado</th><th>Alterar situação do chamado</th></tr>";
+                    echo "<tr><th>ID do chamado</th><th>Email do usuário</th><th>Título do chamado</th><th>Descrição do chamado</th><th>Situação do chamado</th><th>Alterar situação do chamado</th></tr>";
                     while($row = $results->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row["id"]. "</td>";
-                        echo "<td>" . $row["setor"]. "</td>";
                         echo "<td>" . $row["email"]. "</td>";
                         echo "<td>" . $row["titulo"]. "</td>";
                         echo "<td>" . $row["descricao"]. "</td>";

@@ -15,7 +15,7 @@ include('reservas.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="imagem/png" href="../../img/zhengchangdobrasil_logo-removebg-preview.png">
-    <title>Fazer reserva</title>
+    <title>Fazer reserva de sala</title>
 </head>
 <body>
     <nav id="sidebar">
@@ -49,7 +49,15 @@ include('reservas.php');
                     <a onclick="fazerReserva()">
                         <img src="../../img/calendar-days-solid.svg" width="30px">
                         <span class="item-description">
-                            Fazer reserva
+                            Fazer reserva sala
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="fazerReservaCarro()">
+                        <img src="../../img/car-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva carro
                         </span>
                     </a>
                 </li>
@@ -97,17 +105,18 @@ include('reservas.php');
         <header id="cabecalho">
             <div>
                 <img src="../../img/02 - Logo ZCBR Retangular.png" id="logoCabecalho" id="logo">
-                <hr>
+                
             </div>
         </header>
+        <hr>
         <main class="principal">
             <div class="container">
                 <div class="main">
                     <form method="post">
                         <p>E-mail:</p>
-                        <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email"><br>
+                        <input type="text" id="email" class="formulario" placeholder="Exemplo: email@email.com.br" name="email" value="<?php echo $_SESSION['email']; ?>"><br>
                         <p>Responsável pela Reserva:</p>
-                        <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel">
+                        <input type="text" class="formulario" id="nome" placeholder="Exemplo: João" name="responsavel"  value="<?php echo $_SESSION['nome']; ?>">
                         <p>Motivo da Reserva:</p>
                         <input type="text" class="formulario" id="motivo" placeholder="Exemplo: Reunião com cliente" name="motivo">
                         <p>Data da Reserva:</p>
@@ -129,7 +138,7 @@ include('reservas.php');
                         <input type="text" class="formulario" id="observacao" name="observacao">
                 </div>
             </div>
-            <input type="submit" class="formulario" id="botao" name="enviar" onclick="reserva()">
+            <input type="submit" class="formulario" id="botao" name="reservarSala" onclick="reserva()">
             </form>
         </main>
         <hr>

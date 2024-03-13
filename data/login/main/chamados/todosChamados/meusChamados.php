@@ -19,7 +19,7 @@ $result = $mysqli->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="imagem/png" href="../../../../img/zhengchangdobrasil_logo-removebg-preview.png">
-    <title>Abrir Chamado</title>
+    <title>Meus Chamados</title>
 </head>
 <body>
     <nav id="sidebar">
@@ -53,7 +53,15 @@ $result = $mysqli->query($sql);
                     <a onclick="fazerReserva()">
                         <img src="../../../../img/calendar-days-solid.svg" width="30px">
                         <span class="item-description">
-                            Fazer reserva
+                            Fazer reserva sala
+                        </span>
+                    </a>
+                </li>
+                <li class="side-item">
+                    <a onclick="fazerReservaCarro()">
+                        <img src="../../../../img/car-solid.svg" width="30px">
+                        <span class="item-description">
+                            Fazer reserva carro
                         </span>
                     </a>
                 </li>
@@ -100,9 +108,10 @@ $result = $mysqli->query($sql);
         <header id="cabecalho">
             <div>
                 <img src="../../../../img/02 - Logo ZCBR Retangular.png" id="logoCabecalho" id="logo">
-                <hr>
+                
             </div>
         </header>
+        <hr>
         <main class="meusChamados">
             <div id="mainChamados">
                 <?php
